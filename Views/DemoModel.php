@@ -1,5 +1,5 @@
 <?php
-namespace demo\model;
+namespace demo2;
 // tôi có 1 class với tên là DemoModel
 // tên của Class thì trùng với tên File
 class DemoModel {
