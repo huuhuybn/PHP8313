@@ -15,6 +15,16 @@ use demo\model\DemoModel as Demo1;
 use demo2\DemoModel;
 include './Models/DemoModel.php';
 include './Views/DemoModel.php';
+require 'vendor/autoload.php';
+use Huuhu\Php83813\People;
+use Huuhu\Php83813\Models\Taxi;
+
+$ta = new Taxi();
+$ta->print();
+
+$peo = new People();
+$peo->print();
+
 // để sử dụng 1 class thì PHẢI tạo 1 instance của nó
 $demo1 = new DemoModel("Huy","1234","HN",
     "098776","34");
