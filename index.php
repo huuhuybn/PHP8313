@@ -15,11 +15,42 @@ use demo\model\DemoModel as Demo1;
 use demo2\DemoModel;
 include './Models/DemoModel.php';
 include './Views/DemoModel.php';
-require 'vendor/autoload.php';
-use Huuhu\Php83813\People;
+//require 'vendor/autoload.php';
+
+require './src/Staff.php';
+
 use Huuhu\Php83813\Models\Taxi;
 
-$ta = new Taxi();
+echo \Huuhu\Php83813\People::HANGSO;
+echo \Huuhu\Php83813\People::$PI;
+
+$staff = new \Huuhu\Php83813\Staff('Huy Nguyen','HN','Admin');
+// gọi phương thức ghi đè ở lớp con
+
+$staff->print();
+$staff->login("HUY NGUYEN","ABC");
+$staff->xemThongTinLop();
+$staff->display();
+
+// truy cap bien name cua lớp cha
+echo $staff->name; // truy cap trực tiếp
+echo $staff->getRealName();// thông qua set get
+// sử dụng trực tiếp không thông qua instance
+// so sanh và kiểm tra lớp của 1 instance
+
+if($staff instanceof Staff){
+    // true
+}
+
+if ($staff instanceof People){
+    // true
+}
+
+if ($staff instanceof Taxi){
+    // ko xay ra
+}
+
+/*$ta = new Taxi();
 $ta->print();
 
 $peo = new People();
@@ -61,7 +92,9 @@ $demo = new class('ABC'){
         echo $this->x;
     }
 };
-$demo->display();
+$demo->display();*/
+
+
 
 ?>
 
